@@ -1,0 +1,49 @@
+name: go_wisata
+description: "A new Flutter project."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_spinkit: ^5.2.1
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
+  intl: ^0.19.0
+  mobile_scanner: ^5.2.1
+  qr_flutter: ^4.1.0
+  timer_count_down: ^2.2.2
+  http: ^1.2.2
+  dartz: ^0.10.1
+  flutter_bloc: ^8.1.6
+  freezed_annotation: ^2.4.4
+
+dev_dependencies:
+  freezed: ^2.5.7
+  build_runner: ^2.4.12
+  flutter_gen_runner: ^5.6.0
+
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/icons/nav/
+    - assets/icons/payment/
+    - assets/icons/settings/
+
+flutter_gen:
+  output: lib/core/assets/
+  integrations:
+    flutter_svg: true
