@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:go_wisata/data/datasources/auth_remote_datasource.dart';
+import 'package:go_wisata/data/datasources/auth/auth_remote_datasource.dart';
 import 'package:go_wisata/data/model/request/login_request_model.dart';
 import 'package:go_wisata/data/model/response/auth_response_model.dart';
 

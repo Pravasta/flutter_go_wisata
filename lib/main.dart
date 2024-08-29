@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_wisata/data/datasources/auth_remote_datasource.dart';
+import 'package:go_wisata/data/datasources/auth/auth_remote_datasource.dart';
+import 'package:go_wisata/data/datasources/product/product_remote_datasource.dart';
 import 'package:go_wisata/presentation/auth/bloc/login/login_bloc.dart';
+import 'package:go_wisata/presentation/auth/bloc/logout/logout_bloc.dart';
+import 'package:go_wisata/presentation/home/bloc/checkout/checkout_bloc.dart';
+import 'package:go_wisata/presentation/home/bloc/product/product_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'core/core.dart';
@@ -19,9 +23,14 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LoginBloc(AuthRemoteDatasource())),
+        BlocProvider(create: (context) => LogoutBloc(AuthRemoteDatasource())),
+        BlocProvider(
+            create: (context) => ProductBloc(ProductRemoteDatasource())),
+        BlocProvider(create: (context) => CheckoutBloc()),
       ],
       child: MaterialApp(
         title: 'Go Wisata',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
           dialogTheme: const DialogTheme(elevation: 0),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_wisata/data/datasources/auth/auth_local_datasource.dart';
 import 'package:go_wisata/presentation/auth/bloc/login/login_bloc.dart';
 
 import '../../core/core.dart';
@@ -66,7 +67,8 @@ class _LoginPageState extends State<LoginPage> {
                                   backgroundColor: Colors.red,
                                 ));
                               },
-                              success: (data) {
+                              success: (data) async {
+                                await AuthLocalDatasource().saveAuthData(data);
                                 context.pushReplacement(const MainPage());
                               },
                             );
