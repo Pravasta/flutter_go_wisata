@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_wisata/presentation/home/bloc/checkout/models/order_item.dart';
+import 'package:go_wisata/presentation/home/bloc/order/order_bloc.dart';
 
 import '../../../core/core.dart';
 import '../bloc/checkout/checkout_bloc.dart';
+import '../dialog/payment_qris_dialog.dart';
+import '../dialog/payment_tunai_dialog.dart';
 import '../widgets/order_detail_card.dart';
 import '../widgets/payment_method_button.dart';
 
@@ -14,6 +18,9 @@ class OrderDetailPage extends StatefulWidget {
 }
 
 class _OrderDetailPageState extends State<OrderDetailPage> {
+  int totalPrice = 0;
+  List<OrderItem> orderItem = [];
+
   @override
   Widget build(BuildContext context) {
     int paymentButtonIndex = 0;
@@ -110,12 +117,15 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                         builder: (context, state) {
                           return state.maybeWhen(
                             success: (checkout) {
+                              orderItem = checkout;
                               final total = checkout.fold<int>(
                                 0,
                                 (previousValue, element) =>
                                     previousValue +
                                     element.product.price! * element.quantity,
                               );
+                              totalPrice = total;
+
                               return Text(
                                 total.currencyFormatRp,
                                 style: const TextStyle(
@@ -142,17 +152,20 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                   child: Button.filled(
                     onPressed: () {
                       if (paymentButtonIndex == 0) {
-                        // showDialog(
-                        //   context: context,
-                        //   builder: (context) => const PaymentQrisDialog(),
-                        // );
+                        showDialog(
+                          context: context,
+                          builder: (context) => const PaymentQrisDialog(),
+                        );
                       } else if (paymentButtonIndex == 1) {
-                        // showDialog(
-                        //   context: context,
-                        //   builder: (context) => const PaymentTunaiDialog(
-                        //     totalPrice: 140000,
-                        //   ),
-                        // );
+                        context.read<OrderBloc>().add(
+                              OrderEvent.addPaymentMethod('Tunai', orderItem),
+                            );
+                        showDialog(
+                          context: context,
+                          builder: (context) => PaymentTunaiDialog(
+                            totalPrice: totalPrice,
+                          ),
+                        );
                       }
                     },
                     label: 'Process',

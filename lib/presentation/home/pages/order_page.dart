@@ -17,7 +17,7 @@ class OrderPage extends StatefulWidget {
 class _OrderPageState extends State<OrderPage> {
   @override
   void initState() {
-    context.read<ProductBloc>().add(const ProductEvent.getProducts());
+    context.read<ProductBloc>().add(const ProductEvent.getLocalProducts());
     super.initState();
   }
 

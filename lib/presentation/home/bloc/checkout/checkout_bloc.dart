@@ -44,5 +44,10 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
         }
       }
     });
+
+    on<_Started>((event, emit) {
+      emit(const _Loading());
+      emit(const _Success([]));
+    });
   }
 }
