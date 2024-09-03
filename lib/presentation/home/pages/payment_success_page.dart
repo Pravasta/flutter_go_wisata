@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_wisata/data/dataoutputs/transaction_print.dart';
 import 'package:go_wisata/presentation/home/bloc/checkout/checkout_bloc.dart';
+import 'package:go_wisata/presentation/home/bloc/checkout/models/order_model.dart';
 import 'package:go_wisata/presentation/home/main_page.dart';
+import 'package:print_bluetooth_thermal/print_bluetooth_thermal.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../../core/core.dart';
 
-class PaymentSuccessPage extends StatelessWidget {
-  const PaymentSuccessPage({super.key});
+class PaymentSuccessPage extends StatefulWidget {
+  final OrderModel orderModel;
+  const PaymentSuccessPage({super.key, required this.orderModel});
 
+  @override
+  State<PaymentSuccessPage> createState() => _PaymentSuccessPageState();
+}
+
+class _PaymentSuccessPageState extends State<PaymentSuccessPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +28,10 @@ class PaymentSuccessPage extends StatelessWidget {
           style: TextStyle(color: AppColors.white),
         ),
         leading: GestureDetector(
-          onTap: () => context.pop(),
+          onTap: () {
+            context.read<CheckoutBloc>().add(const CheckoutEvent.started());
+            context.pushReplacement(const MainPage());
+          },
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Assets.images.back.image(color: AppColors.white),
@@ -58,7 +70,8 @@ class PaymentSuccessPage extends StatelessWidget {
                   ),
                   const SpaceHeight(16.0),
                   QrImageView(
-                    data: 'payment-receipt',
+                    data: widget.orderModel.id.toString() +
+                        widget.orderModel.transactionTime,
                     version: QrVersions.auto,
                   ),
                   const SpaceHeight(16.0),
@@ -68,15 +81,15 @@ class PaymentSuccessPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text('Tagihan'),
-                      Text(120000.currencyFormatRp),
+                      Text(widget.orderModel.totalPrice.currencyFormatRp),
                     ],
                   ),
                   const SpaceHeight(40.0),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Metode Bayar'),
-                      Text('QRIS'),
+                      const Text('Metode Bayar'),
+                      Text(widget.orderModel.paymentMethod),
                     ],
                   ),
                   const SpaceHeight(8.0),
@@ -105,7 +118,11 @@ class PaymentSuccessPage extends StatelessWidget {
       floatingActionButton: Padding(
         padding: const EdgeInsets.fromLTRB(36, 0, 36, 20),
         child: Button.filled(
-          onPressed: () {
+          onPressed: () async {
+            final printData = await TransactionPrint.instance.printQrCode(
+                widget.orderModel.id.toString() +
+                    widget.orderModel.transactionTime);
+            await PrintBluetoothThermal.writeBytes(printData);
             context.read<CheckoutBloc>().add(const CheckoutEvent.started());
             context.pushReplacement(const MainPage());
           },

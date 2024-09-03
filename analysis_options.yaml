@@ -12,6 +12,8 @@ analyzer:
     use_build_context_synchronously: ignore
     constant_identifier_names: ignore
     unnecessary_to_list_in_spreads: ignore
+    avoid_print: ignore
+    unused_field: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:

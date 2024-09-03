@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_wisata/presentation/home/bloc/product/product_bloc.dart';
 import 'package:go_wisata/presentation/home/pages/history_page.dart';
 import 'package:go_wisata/presentation/home/pages/order_page.dart';
+import 'package:go_wisata/presentation/settings/pages/settings_page.dart';
 
 import '../../core/core.dart';
 import 'widgets/nav_item.dart';
@@ -26,7 +27,7 @@ class _MainPageState extends State<MainPage> {
     const OrderPage(),
     const Center(child: Text('Ticket')),
     const HistoryPage(),
-    const Center(child: Text('Setting')),
+    const SettingsPage(),
   ];
 
   @override

@@ -129,7 +129,8 @@ class _PaymentTunaiDialogState extends State<PaymentTunaiDialog> {
                   );
 
                   ProductLocalDatasource.instance.insertOrder(orderModel);
-                  context.pushReplacement(const PaymentSuccessPage());
+                  context.pushReplacement(
+                      PaymentSuccessPage(orderModel: orderModel));
                 },
               );
             },

@@ -154,7 +154,8 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                       if (paymentButtonIndex == 0) {
                         showDialog(
                           context: context,
-                          builder: (context) => const PaymentQrisDialog(),
+                          builder: (context) =>
+                              PaymentQrisDialog(price: totalPrice),
                         );
                       } else if (paymentButtonIndex == 1) {
                         context.read<OrderBloc>().add(
