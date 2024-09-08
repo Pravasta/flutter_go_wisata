@@ -6,6 +6,8 @@ import 'package:go_wisata/data/datasources/product/product_local_datasource.dart
 import 'package:go_wisata/data/datasources/product/product_remote_datasource.dart';
 import 'package:go_wisata/data/model/response/product_response_model.dart';
 
+import '../../../../data/model/request/create_ticket_request_model.dart';
+
 part 'product_bloc.freezed.dart';
 part 'product_event.dart';
 part 'product_state.dart';
@@ -53,6 +55,71 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       final localProduct = await _localDatasource.getAllProduct();
       products = localProduct;
       emit(_Success(products));
+    });
+
+    on<_CreateTicket>((event, emit) async {
+      emit(const _Loading());
+
+      final requestData = CreateTicketRequestModel(
+        name: event.model.name,
+        price: event.model.price,
+        stock: event.model.stock,
+        categoryId: event.model.categoryId,
+        criteria: event.model.criteria!.toLowerCase(),
+      );
+
+      final response = await _remoteDatasource.createTicket(requestData);
+
+      response.fold(
+        (error) => emit(_Error(error)),
+        (data) {
+          products.add(data.data);
+          emit(_Success(products));
+        },
+      );
+    });
+
+    on<_UpdateTicket>((event, emit) async {
+      emit(const _Loading());
+
+      final requestData = CreateTicketRequestModel(
+        name: event.model.name,
+        price: event.model.price,
+        stock: event.model.stock,
+      );
+
+      final response =
+          await _remoteDatasource.updateTicket(requestData, event.model.id!);
+
+      response.fold(
+        (l) => emit(_Error(l)),
+        (r) {
+          final updatedProducts = products.map((product) {
+            if (product.id == event.model.id) {
+              return r.data;
+            }
+            return product;
+          }).toList();
+
+          products = updatedProducts; // Perbarui daftar lokal
+
+          emit(_Success(
+              updatedProducts)); // Kirim status berhasil dengan daftar produk yang diperbarui
+        },
+      );
+    });
+
+    on<_DeleteTicket>((event, emit) async {
+      emit(const _Loading());
+
+      final response = await _remoteDatasource.deleteTicket(event.id);
+      response.fold(
+        (l) => emit(_Error(l)),
+        (r) {
+          products.removeWhere((product) => product.id == event.id);
+          emit(_Success(products));
+        },
+      );
     });
   }
 }

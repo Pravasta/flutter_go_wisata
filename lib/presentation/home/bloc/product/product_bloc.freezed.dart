@@ -22,6 +22,9 @@ mixin _$ProductEvent {
     required TResult Function() getProducts,
     required TResult Function() syncProduct,
     required TResult Function() getLocalProducts,
+    required TResult Function(Product model) createTicket,
+    required TResult Function(Product model) updateTicket,
+    required TResult Function(int id) deleteTicket,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +33,9 @@ mixin _$ProductEvent {
     TResult? Function()? getProducts,
     TResult? Function()? syncProduct,
     TResult? Function()? getLocalProducts,
+    TResult? Function(Product model)? createTicket,
+    TResult? Function(Product model)? updateTicket,
+    TResult? Function(int id)? deleteTicket,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +44,9 @@ mixin _$ProductEvent {
     TResult Function()? getProducts,
     TResult Function()? syncProduct,
     TResult Function()? getLocalProducts,
+    TResult Function(Product model)? createTicket,
+    TResult Function(Product model)? updateTicket,
+    TResult Function(int id)? deleteTicket,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +56,9 @@ mixin _$ProductEvent {
     required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_SyncProduct value) syncProduct,
     required TResult Function(_GetLocalProducts value) getLocalProducts,
+    required TResult Function(_CreateTicket value) createTicket,
+    required TResult Function(_UpdateTicket value) updateTicket,
+    required TResult Function(_DeleteTicket value) deleteTicket,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +67,9 @@ mixin _$ProductEvent {
     TResult? Function(_GetProducts value)? getProducts,
     TResult? Function(_SyncProduct value)? syncProduct,
     TResult? Function(_GetLocalProducts value)? getLocalProducts,
+    TResult? Function(_CreateTicket value)? createTicket,
+    TResult? Function(_UpdateTicket value)? updateTicket,
+    TResult? Function(_DeleteTicket value)? deleteTicket,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +78,9 @@ mixin _$ProductEvent {
     TResult Function(_GetProducts value)? getProducts,
     TResult Function(_SyncProduct value)? syncProduct,
     TResult Function(_GetLocalProducts value)? getLocalProducts,
+    TResult Function(_CreateTicket value)? createTicket,
+    TResult Function(_UpdateTicket value)? updateTicket,
+    TResult Function(_DeleteTicket value)? deleteTicket,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +152,9 @@ class _$StartedImpl implements _Started {
     required TResult Function() getProducts,
     required TResult Function() syncProduct,
     required TResult Function() getLocalProducts,
+    required TResult Function(Product model) createTicket,
+    required TResult Function(Product model) updateTicket,
+    required TResult Function(int id) deleteTicket,
   }) {
     return started();
   }
@@ -145,6 +166,9 @@ class _$StartedImpl implements _Started {
     TResult? Function()? getProducts,
     TResult? Function()? syncProduct,
     TResult? Function()? getLocalProducts,
+    TResult? Function(Product model)? createTicket,
+    TResult? Function(Product model)? updateTicket,
+    TResult? Function(int id)? deleteTicket,
   }) {
     return started?.call();
   }
@@ -156,6 +180,9 @@ class _$StartedImpl implements _Started {
     TResult Function()? getProducts,
     TResult Function()? syncProduct,
     TResult Function()? getLocalProducts,
+    TResult Function(Product model)? createTicket,
+    TResult Function(Product model)? updateTicket,
+    TResult Function(int id)? deleteTicket,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -171,6 +198,9 @@ class _$StartedImpl implements _Started {
     required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_SyncProduct value) syncProduct,
     required TResult Function(_GetLocalProducts value) getLocalProducts,
+    required TResult Function(_CreateTicket value) createTicket,
+    required TResult Function(_UpdateTicket value) updateTicket,
+    required TResult Function(_DeleteTicket value) deleteTicket,
   }) {
     return started(this);
   }
@@ -182,6 +212,9 @@ class _$StartedImpl implements _Started {
     TResult? Function(_GetProducts value)? getProducts,
     TResult? Function(_SyncProduct value)? syncProduct,
     TResult? Function(_GetLocalProducts value)? getLocalProducts,
+    TResult? Function(_CreateTicket value)? createTicket,
+    TResult? Function(_UpdateTicket value)? updateTicket,
+    TResult? Function(_DeleteTicket value)? deleteTicket,
   }) {
     return started?.call(this);
   }
@@ -193,6 +226,9 @@ class _$StartedImpl implements _Started {
     TResult Function(_GetProducts value)? getProducts,
     TResult Function(_SyncProduct value)? syncProduct,
     TResult Function(_GetLocalProducts value)? getLocalProducts,
+    TResult Function(_CreateTicket value)? createTicket,
+    TResult Function(_UpdateTicket value)? updateTicket,
+    TResult Function(_DeleteTicket value)? deleteTicket,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -251,6 +287,9 @@ class _$GetProductsImpl implements _GetProducts {
     required TResult Function() getProducts,
     required TResult Function() syncProduct,
     required TResult Function() getLocalProducts,
+    required TResult Function(Product model) createTicket,
+    required TResult Function(Product model) updateTicket,
+    required TResult Function(int id) deleteTicket,
   }) {
     return getProducts();
   }
@@ -262,6 +301,9 @@ class _$GetProductsImpl implements _GetProducts {
     TResult? Function()? getProducts,
     TResult? Function()? syncProduct,
     TResult? Function()? getLocalProducts,
+    TResult? Function(Product model)? createTicket,
+    TResult? Function(Product model)? updateTicket,
+    TResult? Function(int id)? deleteTicket,
   }) {
     return getProducts?.call();
   }
@@ -273,6 +315,9 @@ class _$GetProductsImpl implements _GetProducts {
     TResult Function()? getProducts,
     TResult Function()? syncProduct,
     TResult Function()? getLocalProducts,
+    TResult Function(Product model)? createTicket,
+    TResult Function(Product model)? updateTicket,
+    TResult Function(int id)? deleteTicket,
     required TResult orElse(),
   }) {
     if (getProducts != null) {
@@ -288,6 +333,9 @@ class _$GetProductsImpl implements _GetProducts {
     required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_SyncProduct value) syncProduct,
     required TResult Function(_GetLocalProducts value) getLocalProducts,
+    required TResult Function(_CreateTicket value) createTicket,
+    required TResult Function(_UpdateTicket value) updateTicket,
+    required TResult Function(_DeleteTicket value) deleteTicket,
   }) {
     return getProducts(this);
   }
@@ -299,6 +347,9 @@ class _$GetProductsImpl implements _GetProducts {
     TResult? Function(_GetProducts value)? getProducts,
     TResult? Function(_SyncProduct value)? syncProduct,
     TResult? Function(_GetLocalProducts value)? getLocalProducts,
+    TResult? Function(_CreateTicket value)? createTicket,
+    TResult? Function(_UpdateTicket value)? updateTicket,
+    TResult? Function(_DeleteTicket value)? deleteTicket,
   }) {
     return getProducts?.call(this);
   }
@@ -310,6 +361,9 @@ class _$GetProductsImpl implements _GetProducts {
     TResult Function(_GetProducts value)? getProducts,
     TResult Function(_SyncProduct value)? syncProduct,
     TResult Function(_GetLocalProducts value)? getLocalProducts,
+    TResult Function(_CreateTicket value)? createTicket,
+    TResult Function(_UpdateTicket value)? updateTicket,
+    TResult Function(_DeleteTicket value)? deleteTicket,
     required TResult orElse(),
   }) {
     if (getProducts != null) {
@@ -368,6 +422,9 @@ class _$SyncProductImpl implements _SyncProduct {
     required TResult Function() getProducts,
     required TResult Function() syncProduct,
     required TResult Function() getLocalProducts,
+    required TResult Function(Product model) createTicket,
+    required TResult Function(Product model) updateTicket,
+    required TResult Function(int id) deleteTicket,
   }) {
     return syncProduct();
   }
@@ -379,6 +436,9 @@ class _$SyncProductImpl implements _SyncProduct {
     TResult? Function()? getProducts,
     TResult? Function()? syncProduct,
     TResult? Function()? getLocalProducts,
+    TResult? Function(Product model)? createTicket,
+    TResult? Function(Product model)? updateTicket,
+    TResult? Function(int id)? deleteTicket,
   }) {
     return syncProduct?.call();
   }
@@ -390,6 +450,9 @@ class _$SyncProductImpl implements _SyncProduct {
     TResult Function()? getProducts,
     TResult Function()? syncProduct,
     TResult Function()? getLocalProducts,
+    TResult Function(Product model)? createTicket,
+    TResult Function(Product model)? updateTicket,
+    TResult Function(int id)? deleteTicket,
     required TResult orElse(),
   }) {
     if (syncProduct != null) {
@@ -405,6 +468,9 @@ class _$SyncProductImpl implements _SyncProduct {
     required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_SyncProduct value) syncProduct,
     required TResult Function(_GetLocalProducts value) getLocalProducts,
+    required TResult Function(_CreateTicket value) createTicket,
+    required TResult Function(_UpdateTicket value) updateTicket,
+    required TResult Function(_DeleteTicket value) deleteTicket,
   }) {
     return syncProduct(this);
   }
@@ -416,6 +482,9 @@ class _$SyncProductImpl implements _SyncProduct {
     TResult? Function(_GetProducts value)? getProducts,
     TResult? Function(_SyncProduct value)? syncProduct,
     TResult? Function(_GetLocalProducts value)? getLocalProducts,
+    TResult? Function(_CreateTicket value)? createTicket,
+    TResult? Function(_UpdateTicket value)? updateTicket,
+    TResult? Function(_DeleteTicket value)? deleteTicket,
   }) {
     return syncProduct?.call(this);
   }
@@ -427,6 +496,9 @@ class _$SyncProductImpl implements _SyncProduct {
     TResult Function(_GetProducts value)? getProducts,
     TResult Function(_SyncProduct value)? syncProduct,
     TResult Function(_GetLocalProducts value)? getLocalProducts,
+    TResult Function(_CreateTicket value)? createTicket,
+    TResult Function(_UpdateTicket value)? updateTicket,
+    TResult Function(_DeleteTicket value)? deleteTicket,
     required TResult orElse(),
   }) {
     if (syncProduct != null) {
@@ -485,6 +557,9 @@ class _$GetLocalProductsImpl implements _GetLocalProducts {
     required TResult Function() getProducts,
     required TResult Function() syncProduct,
     required TResult Function() getLocalProducts,
+    required TResult Function(Product model) createTicket,
+    required TResult Function(Product model) updateTicket,
+    required TResult Function(int id) deleteTicket,
   }) {
     return getLocalProducts();
   }
@@ -496,6 +571,9 @@ class _$GetLocalProductsImpl implements _GetLocalProducts {
     TResult? Function()? getProducts,
     TResult? Function()? syncProduct,
     TResult? Function()? getLocalProducts,
+    TResult? Function(Product model)? createTicket,
+    TResult? Function(Product model)? updateTicket,
+    TResult? Function(int id)? deleteTicket,
   }) {
     return getLocalProducts?.call();
   }
@@ -507,6 +585,9 @@ class _$GetLocalProductsImpl implements _GetLocalProducts {
     TResult Function()? getProducts,
     TResult Function()? syncProduct,
     TResult Function()? getLocalProducts,
+    TResult Function(Product model)? createTicket,
+    TResult Function(Product model)? updateTicket,
+    TResult Function(int id)? deleteTicket,
     required TResult orElse(),
   }) {
     if (getLocalProducts != null) {
@@ -522,6 +603,9 @@ class _$GetLocalProductsImpl implements _GetLocalProducts {
     required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_SyncProduct value) syncProduct,
     required TResult Function(_GetLocalProducts value) getLocalProducts,
+    required TResult Function(_CreateTicket value) createTicket,
+    required TResult Function(_UpdateTicket value) updateTicket,
+    required TResult Function(_DeleteTicket value) deleteTicket,
   }) {
     return getLocalProducts(this);
   }
@@ -533,6 +617,9 @@ class _$GetLocalProductsImpl implements _GetLocalProducts {
     TResult? Function(_GetProducts value)? getProducts,
     TResult? Function(_SyncProduct value)? syncProduct,
     TResult? Function(_GetLocalProducts value)? getLocalProducts,
+    TResult? Function(_CreateTicket value)? createTicket,
+    TResult? Function(_UpdateTicket value)? updateTicket,
+    TResult? Function(_DeleteTicket value)? deleteTicket,
   }) {
     return getLocalProducts?.call(this);
   }
@@ -544,6 +631,9 @@ class _$GetLocalProductsImpl implements _GetLocalProducts {
     TResult Function(_GetProducts value)? getProducts,
     TResult Function(_SyncProduct value)? syncProduct,
     TResult Function(_GetLocalProducts value)? getLocalProducts,
+    TResult Function(_CreateTicket value)? createTicket,
+    TResult Function(_UpdateTicket value)? updateTicket,
+    TResult Function(_DeleteTicket value)? deleteTicket,
     required TResult orElse(),
   }) {
     if (getLocalProducts != null) {
@@ -555,6 +645,516 @@ class _$GetLocalProductsImpl implements _GetLocalProducts {
 
 abstract class _GetLocalProducts implements ProductEvent {
   const factory _GetLocalProducts() = _$GetLocalProductsImpl;
+}
+
+/// @nodoc
+abstract class _$$CreateTicketImplCopyWith<$Res> {
+  factory _$$CreateTicketImplCopyWith(
+          _$CreateTicketImpl value, $Res Function(_$CreateTicketImpl) then) =
+      __$$CreateTicketImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Product model});
+}
+
+/// @nodoc
+class __$$CreateTicketImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$CreateTicketImpl>
+    implements _$$CreateTicketImplCopyWith<$Res> {
+  __$$CreateTicketImplCopyWithImpl(
+      _$CreateTicketImpl _value, $Res Function(_$CreateTicketImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? model = null,
+  }) {
+    return _then(_$CreateTicketImpl(
+      null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as Product,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateTicketImpl implements _CreateTicket {
+  const _$CreateTicketImpl(this.model);
+
+  @override
+  final Product model;
+
+  @override
+  String toString() {
+    return 'ProductEvent.createTicket(model: $model)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateTicketImpl &&
+            (identical(other.model, model) || other.model == model));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, model);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateTicketImplCopyWith<_$CreateTicketImpl> get copyWith =>
+      __$$CreateTicketImplCopyWithImpl<_$CreateTicketImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getProducts,
+    required TResult Function() syncProduct,
+    required TResult Function() getLocalProducts,
+    required TResult Function(Product model) createTicket,
+    required TResult Function(Product model) updateTicket,
+    required TResult Function(int id) deleteTicket,
+  }) {
+    return createTicket(model);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getProducts,
+    TResult? Function()? syncProduct,
+    TResult? Function()? getLocalProducts,
+    TResult? Function(Product model)? createTicket,
+    TResult? Function(Product model)? updateTicket,
+    TResult? Function(int id)? deleteTicket,
+  }) {
+    return createTicket?.call(model);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getProducts,
+    TResult Function()? syncProduct,
+    TResult Function()? getLocalProducts,
+    TResult Function(Product model)? createTicket,
+    TResult Function(Product model)? updateTicket,
+    TResult Function(int id)? deleteTicket,
+    required TResult orElse(),
+  }) {
+    if (createTicket != null) {
+      return createTicket(model);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetProducts value) getProducts,
+    required TResult Function(_SyncProduct value) syncProduct,
+    required TResult Function(_GetLocalProducts value) getLocalProducts,
+    required TResult Function(_CreateTicket value) createTicket,
+    required TResult Function(_UpdateTicket value) updateTicket,
+    required TResult Function(_DeleteTicket value) deleteTicket,
+  }) {
+    return createTicket(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetProducts value)? getProducts,
+    TResult? Function(_SyncProduct value)? syncProduct,
+    TResult? Function(_GetLocalProducts value)? getLocalProducts,
+    TResult? Function(_CreateTicket value)? createTicket,
+    TResult? Function(_UpdateTicket value)? updateTicket,
+    TResult? Function(_DeleteTicket value)? deleteTicket,
+  }) {
+    return createTicket?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetProducts value)? getProducts,
+    TResult Function(_SyncProduct value)? syncProduct,
+    TResult Function(_GetLocalProducts value)? getLocalProducts,
+    TResult Function(_CreateTicket value)? createTicket,
+    TResult Function(_UpdateTicket value)? updateTicket,
+    TResult Function(_DeleteTicket value)? deleteTicket,
+    required TResult orElse(),
+  }) {
+    if (createTicket != null) {
+      return createTicket(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateTicket implements ProductEvent {
+  const factory _CreateTicket(final Product model) = _$CreateTicketImpl;
+
+  Product get model;
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreateTicketImplCopyWith<_$CreateTicketImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateTicketImplCopyWith<$Res> {
+  factory _$$UpdateTicketImplCopyWith(
+          _$UpdateTicketImpl value, $Res Function(_$UpdateTicketImpl) then) =
+      __$$UpdateTicketImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Product model});
+}
+
+/// @nodoc
+class __$$UpdateTicketImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$UpdateTicketImpl>
+    implements _$$UpdateTicketImplCopyWith<$Res> {
+  __$$UpdateTicketImplCopyWithImpl(
+      _$UpdateTicketImpl _value, $Res Function(_$UpdateTicketImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? model = null,
+  }) {
+    return _then(_$UpdateTicketImpl(
+      null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as Product,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateTicketImpl implements _UpdateTicket {
+  const _$UpdateTicketImpl(this.model);
+
+  @override
+  final Product model;
+
+  @override
+  String toString() {
+    return 'ProductEvent.updateTicket(model: $model)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateTicketImpl &&
+            (identical(other.model, model) || other.model == model));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, model);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateTicketImplCopyWith<_$UpdateTicketImpl> get copyWith =>
+      __$$UpdateTicketImplCopyWithImpl<_$UpdateTicketImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getProducts,
+    required TResult Function() syncProduct,
+    required TResult Function() getLocalProducts,
+    required TResult Function(Product model) createTicket,
+    required TResult Function(Product model) updateTicket,
+    required TResult Function(int id) deleteTicket,
+  }) {
+    return updateTicket(model);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getProducts,
+    TResult? Function()? syncProduct,
+    TResult? Function()? getLocalProducts,
+    TResult? Function(Product model)? createTicket,
+    TResult? Function(Product model)? updateTicket,
+    TResult? Function(int id)? deleteTicket,
+  }) {
+    return updateTicket?.call(model);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getProducts,
+    TResult Function()? syncProduct,
+    TResult Function()? getLocalProducts,
+    TResult Function(Product model)? createTicket,
+    TResult Function(Product model)? updateTicket,
+    TResult Function(int id)? deleteTicket,
+    required TResult orElse(),
+  }) {
+    if (updateTicket != null) {
+      return updateTicket(model);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetProducts value) getProducts,
+    required TResult Function(_SyncProduct value) syncProduct,
+    required TResult Function(_GetLocalProducts value) getLocalProducts,
+    required TResult Function(_CreateTicket value) createTicket,
+    required TResult Function(_UpdateTicket value) updateTicket,
+    required TResult Function(_DeleteTicket value) deleteTicket,
+  }) {
+    return updateTicket(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetProducts value)? getProducts,
+    TResult? Function(_SyncProduct value)? syncProduct,
+    TResult? Function(_GetLocalProducts value)? getLocalProducts,
+    TResult? Function(_CreateTicket value)? createTicket,
+    TResult? Function(_UpdateTicket value)? updateTicket,
+    TResult? Function(_DeleteTicket value)? deleteTicket,
+  }) {
+    return updateTicket?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetProducts value)? getProducts,
+    TResult Function(_SyncProduct value)? syncProduct,
+    TResult Function(_GetLocalProducts value)? getLocalProducts,
+    TResult Function(_CreateTicket value)? createTicket,
+    TResult Function(_UpdateTicket value)? updateTicket,
+    TResult Function(_DeleteTicket value)? deleteTicket,
+    required TResult orElse(),
+  }) {
+    if (updateTicket != null) {
+      return updateTicket(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateTicket implements ProductEvent {
+  const factory _UpdateTicket(final Product model) = _$UpdateTicketImpl;
+
+  Product get model;
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateTicketImplCopyWith<_$UpdateTicketImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteTicketImplCopyWith<$Res> {
+  factory _$$DeleteTicketImplCopyWith(
+          _$DeleteTicketImpl value, $Res Function(_$DeleteTicketImpl) then) =
+      __$$DeleteTicketImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$DeleteTicketImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$DeleteTicketImpl>
+    implements _$$DeleteTicketImplCopyWith<$Res> {
+  __$$DeleteTicketImplCopyWithImpl(
+      _$DeleteTicketImpl _value, $Res Function(_$DeleteTicketImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$DeleteTicketImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteTicketImpl implements _DeleteTicket {
+  const _$DeleteTicketImpl(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'ProductEvent.deleteTicket(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteTicketImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteTicketImplCopyWith<_$DeleteTicketImpl> get copyWith =>
+      __$$DeleteTicketImplCopyWithImpl<_$DeleteTicketImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getProducts,
+    required TResult Function() syncProduct,
+    required TResult Function() getLocalProducts,
+    required TResult Function(Product model) createTicket,
+    required TResult Function(Product model) updateTicket,
+    required TResult Function(int id) deleteTicket,
+  }) {
+    return deleteTicket(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getProducts,
+    TResult? Function()? syncProduct,
+    TResult? Function()? getLocalProducts,
+    TResult? Function(Product model)? createTicket,
+    TResult? Function(Product model)? updateTicket,
+    TResult? Function(int id)? deleteTicket,
+  }) {
+    return deleteTicket?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getProducts,
+    TResult Function()? syncProduct,
+    TResult Function()? getLocalProducts,
+    TResult Function(Product model)? createTicket,
+    TResult Function(Product model)? updateTicket,
+    TResult Function(int id)? deleteTicket,
+    required TResult orElse(),
+  }) {
+    if (deleteTicket != null) {
+      return deleteTicket(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetProducts value) getProducts,
+    required TResult Function(_SyncProduct value) syncProduct,
+    required TResult Function(_GetLocalProducts value) getLocalProducts,
+    required TResult Function(_CreateTicket value) createTicket,
+    required TResult Function(_UpdateTicket value) updateTicket,
+    required TResult Function(_DeleteTicket value) deleteTicket,
+  }) {
+    return deleteTicket(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetProducts value)? getProducts,
+    TResult? Function(_SyncProduct value)? syncProduct,
+    TResult? Function(_GetLocalProducts value)? getLocalProducts,
+    TResult? Function(_CreateTicket value)? createTicket,
+    TResult? Function(_UpdateTicket value)? updateTicket,
+    TResult? Function(_DeleteTicket value)? deleteTicket,
+  }) {
+    return deleteTicket?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetProducts value)? getProducts,
+    TResult Function(_SyncProduct value)? syncProduct,
+    TResult Function(_GetLocalProducts value)? getLocalProducts,
+    TResult Function(_CreateTicket value)? createTicket,
+    TResult Function(_UpdateTicket value)? updateTicket,
+    TResult Function(_DeleteTicket value)? deleteTicket,
+    required TResult orElse(),
+  }) {
+    if (deleteTicket != null) {
+      return deleteTicket(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteTicket implements ProductEvent {
+  const factory _DeleteTicket(final int id) = _$DeleteTicketImpl;
+
+  int get id;
+
+  /// Create a copy of ProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteTicketImplCopyWith<_$DeleteTicketImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

@@ -2,6 +2,9 @@ import 'package:go_wisata/data/model/response/product_response_model.dart';
 import 'package:go_wisata/presentation/home/bloc/checkout/models/order_model.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../../model/request/order_request_model.dart';
+import '../../model/response/category_response_model.dart';
+
 class ProductLocalDatasource {
   ProductLocalDatasource._init();
   static Database? _database;
@@ -150,5 +153,56 @@ class ProductLocalDatasource {
     final db = await instance.database;
     final result = await db.query(tableOrders, orderBy: 'id DESC');
     return result.map((e) => OrderModel.fromLocalMap(e)).toList();
+  }
+
+  //get order is sync false
+  Future<List<OrderModel>> getOrdersIsSyncFalse() async {
+    final db = await instance.database;
+    final result = await db.query('orders', where: 'is_sync = 0');
+
+    return result.map((e) => OrderModel.fromLocalMap(e)).toList();
+  }
+
+  //update order is sync
+  Future<void> updateOrderIsSync(int id) async {
+    final db = await instance.database;
+    await db.update(
+      'orders',
+      {'is_sync': 1},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+
+  //get order item by id order
+  Future<List<OrderItemModel>> getOrderItemsByIdOrder(int idOrder) async {
+    final db = await instance.database;
+    final result = await db.query('order_items', where: 'id_order = $idOrder');
+
+    return result.map((e) => OrderItemModel.fromMap(e)).toList();
+  }
+
+  Future<void> insertAllCategory(List<Category> categories) async {
+    final db = await instance.database;
+    for (var category in categories) {
+      await db.insert(tableCategory, category.toMap(),
+          conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+  }
+
+  //Remove all data category
+  Future<void> removeAllCategory() async {
+    final db = await instance.database;
+    await db.delete(tableCategory);
+  }
+
+  //verifyQrCode
+  Future<bool> verifyQrCode(String qrCode) async {
+    final realTranctionTime = qrCode.split('#').last;
+    final db = await instance.database;
+    final result = await db.query('orders',
+        where: "transaction_time = '$realTranctionTime'");
+
+    return result.isNotEmpty;
   }
 }

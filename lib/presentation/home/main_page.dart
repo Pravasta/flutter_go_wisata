@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_wisata/presentation/home/bloc/product/product_bloc.dart';
 import 'package:go_wisata/presentation/home/pages/history_page.dart';
 import 'package:go_wisata/presentation/home/pages/order_page.dart';
+import 'package:go_wisata/presentation/home/pages/qr_scanner_page.dart';
+import 'package:go_wisata/presentation/home/pages/ticket_page.dart';
 import 'package:go_wisata/presentation/settings/pages/settings_page.dart';
 
 import '../../core/core.dart';
@@ -25,7 +27,7 @@ class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
   final _pages = [
     const OrderPage(),
-    const Center(child: Text('Ticket')),
+    const TicketPage(),
     const HistoryPage(),
     const SettingsPage(),
   ];
@@ -92,7 +94,9 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
         floatingActionButton: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            context.push(const QrScannerPage());
+          },
           child: Container(
             padding: const EdgeInsets.all(12.0),
             decoration: const BoxDecoration(

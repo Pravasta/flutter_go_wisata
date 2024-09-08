@@ -70,8 +70,8 @@ class _PaymentSuccessPageState extends State<PaymentSuccessPage> {
                   ),
                   const SpaceHeight(16.0),
                   QrImageView(
-                    data: widget.orderModel.id.toString() +
-                        widget.orderModel.transactionTime,
+                    data:
+                        "${widget.orderModel.id}#${widget.orderModel.transactionTime}",
                     version: QrVersions.auto,
                   ),
                   const SpaceHeight(16.0),

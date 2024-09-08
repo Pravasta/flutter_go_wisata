@@ -33,6 +33,12 @@ class _HistoryPageState extends State<HistoryPage> {
               return const Center(child: CircularProgressIndicator());
             },
             success: (histories) {
+              if (histories.isEmpty) {
+                return const Center(
+                  child: Text('History Empty'),
+                );
+              }
+
               return ListView(
                 padding: const EdgeInsets.all(16.0),
                 children: List.generate(

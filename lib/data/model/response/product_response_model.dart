@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'category_response_model.dart';
+
 class ProductResponseModel {
   final String? status;
   final List<Product>? data;
@@ -73,10 +75,10 @@ class Product {
         price: json["price"],
         stock: json["stock"],
         categoryId: json["category_id"],
-        image: json["image"],
-        status: json["status"],
+        // image: json["image"],
+        // status: json["status"],
         criteria: json["criteria"],
-        favorite: json["favorite"],
+        // favorite: json["favorite"],
         deletedAt: json["deleted_at"],
         createdAt: json["created_at"] == null
             ? null
@@ -87,27 +89,6 @@ class Product {
         category: json["category"] == null
             ? null
             : Category.fromMap(json["category"]),
-      );
-
-  factory Product.fromLocalMap(Map<String, dynamic> json) => Product(
-        id: json["productId"],
-        name: json["name"],
-        description: json["description"],
-        price: json["price"] is String
-            ? int.tryParse(json['price'])
-            : json['price'],
-        stock: json["stock"],
-        categoryId: json["category_id"],
-        image: json["image"],
-        status: json["status"],
-        criteria: json["criteria"],
-        favorite: json["is_favorite"],
-        createdAt: json["created_at"] == null
-            ? null
-            : DateTime.parse(json["created_at"]),
-        updatedAt: json["updated_at"] == null
-            ? null
-            : DateTime.parse(json["updated_at"]),
       );
 
   Map<String, dynamic> toMap() => {
@@ -127,20 +108,84 @@ class Product {
         "category": category?.toMap(),
       };
 
+  factory Product.fromLocalMap(Map<String, dynamic> json) => Product(
+        id: json["productId"],
+        categoryId: json["category_id"],
+        name: json["name"],
+        description: json["description"],
+        image: json["image"],
+        price: json["price"] is String
+            ? int.tryParse(json["price"])
+            : json["price"],
+        stock: json["stock"],
+        status: json["status"],
+        favorite: json["is_favorite"],
+        createdAt: json["created_at"] == null
+            ? null
+            : DateTime.parse(json["created_at"]),
+        updatedAt: json["updated_at"] == null
+            ? null
+            : DateTime.parse(json["updated_at"]),
+        deletedAt: json["deleted_at"],
+        criteria: json["criteria"],
+        category: json["category"] == null
+            ? null
+            : Category.fromMap(json["category"]),
+      );
+
   Map<String, dynamic> toLocalMap() => {
         "productId": id,
+        "category_id": categoryId,
         "name": name,
         "description": description,
+        "image": image,
         "price": price,
         "stock": stock,
-        "category_id": categoryId,
-        "image": image,
         "status": status,
-        "criteria": criteria,
         "is_favorite": favorite,
         "created_at": createdAt?.toIso8601String(),
         "updated_at": updatedAt?.toIso8601String(),
+        "criteria": criteria,
       };
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Product &&
+        other.id == id &&
+        other.name == name &&
+        other.description == description &&
+        other.price == price &&
+        other.stock == stock &&
+        other.categoryId == categoryId &&
+        other.image == image &&
+        other.status == status &&
+        other.criteria == criteria &&
+        other.favorite == favorite &&
+        other.deletedAt == deletedAt &&
+        other.createdAt == createdAt &&
+        other.updatedAt == updatedAt &&
+        other.category == category;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+        name.hashCode ^
+        description.hashCode ^
+        price.hashCode ^
+        stock.hashCode ^
+        categoryId.hashCode ^
+        image.hashCode ^
+        status.hashCode ^
+        criteria.hashCode ^
+        favorite.hashCode ^
+        deletedAt.hashCode ^
+        createdAt.hashCode ^
+        updatedAt.hashCode ^
+        category.hashCode;
+  }
 
   Product copyWith({
     int? id,
@@ -177,42 +222,63 @@ class Product {
   }
 }
 
-class Category {
-  final int? id;
-  final String? name;
-  final String? description;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
+// class Category {
+//   final int? id;
+//   final String? name;
+//   final String? description;
+//   final DateTime? createdAt;
+//   final DateTime? updatedAt;
 
-  Category({
-    this.id,
-    this.name,
-    this.description,
-    this.createdAt,
-    this.updatedAt,
-  });
+//   Category({
+//     this.id,
+//     this.name,
+//     this.description,
+//     this.createdAt,
+//     this.updatedAt,
+//   });
 
-  factory Category.fromJson(String str) => Category.fromMap(json.decode(str));
+//   factory Category.fromJson(String str) => Category.fromMap(json.decode(str));
 
-  String toJson() => json.encode(toMap());
+//   String toJson() => json.encode(toMap());
 
-  factory Category.fromMap(Map<String, dynamic> json) => Category(
-        id: json["id"],
-        name: json["name"],
-        description: json["description"],
-        createdAt: json["created_at"] == null
-            ? null
-            : DateTime.parse(json["created_at"]),
-        updatedAt: json["updated_at"] == null
-            ? null
-            : DateTime.parse(json["updated_at"]),
-      );
+//   factory Category.fromMap(Map<String, dynamic> json) => Category(
+//         id: json["id"],
+//         name: json["name"],
+//         description: json["description"],
+//         createdAt: json["created_at"] == null
+//             ? null
+//             : DateTime.parse(json["created_at"]),
+//         updatedAt: json["updated_at"] == null
+//             ? null
+//             : DateTime.parse(json["updated_at"]),
+//       );
 
-  Map<String, dynamic> toMap() => {
-        "id": id,
-        "name": name,
-        "description": description,
-        "created_at": createdAt?.toIso8601String(),
-        "updated_at": updatedAt?.toIso8601String(),
-      };
-}
+//   Map<String, dynamic> toMap() => {
+//         "id": id,
+//         "name": name,
+//         "description": description,
+//         "created_at": createdAt?.toIso8601String(),
+//         "updated_at": updatedAt?.toIso8601String(),
+//       };
+
+//   @override
+//   bool operator ==(Object other) {
+//     if (identical(this, other)) return true;
+
+//     return other is Category &&
+//         other.id == id &&
+//         other.name == name &&
+//         other.description == description &&
+//         other.createdAt == createdAt &&
+//         other.updatedAt == updatedAt;
+//   }
+
+//   @override
+//   int get hashCode {
+//     return id.hashCode ^
+//         name.hashCode ^
+//         description.hashCode ^
+//         createdAt.hashCode ^
+//         updatedAt.hashCode;
+//   }
+// }

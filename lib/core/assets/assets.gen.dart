@@ -64,13 +64,20 @@ class $AssetsImagesGen {
   AssetGenImage get logoWhite =>
       const AssetGenImage('assets/images/logo_white.png');
 
+  /// File path: assets/images/not_valid.png
+  AssetGenImage get notValid =>
+      const AssetGenImage('assets/images/not_valid.png');
+
   /// File path: assets/images/receipt_card.png
   AssetGenImage get receiptCard =>
       const AssetGenImage('assets/images/receipt_card.png');
 
+  /// File path: assets/images/valid.png
+  AssetGenImage get valid => const AssetGenImage('assets/images/valid.png');
+
   /// List of all assets
   List<AssetGenImage> get values =>
-      [back, logoBlue, logoCwb, logoWhite, receiptCard];
+      [back, logoBlue, logoCwb, logoWhite, notValid, receiptCard, valid];
 }
 
 class $AssetsIconsNavGen {

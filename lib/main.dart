@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_wisata/data/datasources/auth/auth_remote_datasource.dart';
+import 'package:go_wisata/data/datasources/category/category_remote_datasource.dart';
 import 'package:go_wisata/data/datasources/midtrans/midtrans_remote_datasource.dart';
+import 'package:go_wisata/data/datasources/order/order_remote_datasource.dart';
 import 'package:go_wisata/data/datasources/product/product_local_datasource.dart';
 import 'package:go_wisata/data/datasources/product/product_remote_datasource.dart';
 import 'package:go_wisata/presentation/auth/bloc/login/login_bloc.dart';
 import 'package:go_wisata/presentation/auth/bloc/logout/logout_bloc.dart';
+import 'package:go_wisata/presentation/home/bloc/category/category_bloc.dart';
 import 'package:go_wisata/presentation/home/bloc/checkout/checkout_bloc.dart';
 import 'package:go_wisata/presentation/home/bloc/history/history_bloc.dart';
 import 'package:go_wisata/presentation/home/bloc/order/order_bloc.dart';
 import 'package:go_wisata/presentation/home/bloc/product/product_bloc.dart';
 import 'package:go_wisata/presentation/home/bloc/qris/qris_bloc.dart';
 import 'package:go_wisata/presentation/home/bloc/qris_status/qris_status_bloc.dart';
+import 'package:go_wisata/presentation/home/bloc/sync_order/sync_order_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'core/core.dart';
@@ -42,6 +46,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => QrisBloc(MidtransRemoteDatasource())),
         BlocProvider(
             create: (context) => QrisStatusBloc(MidtransRemoteDatasource())),
+        BlocProvider(
+            create: (context) => CategoryBloc(CategoryRemoteDatasource())),
+        BlocProvider(
+            create: (context) => SyncOrderBloc(OrderRemoteDatasource())),
       ],
       child: MaterialApp(
         title: 'Go Wisata',

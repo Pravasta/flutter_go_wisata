@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_wisata/core/core.dart';
 import 'package:go_wisata/data/datasources/auth/auth_local_datasource.dart';
 import 'package:go_wisata/presentation/home/main_page.dart';
 
+import '../../core/core.dart';
 import 'login_page.dart';
 
 class SplashPage extends StatelessWidget {
